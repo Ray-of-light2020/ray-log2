@@ -13,8 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('log_condition', function (Blueprint $table) {
-            $table->bigIncrements('id');
+        Schema::create('log_conditions', function (Blueprint $table) {
+            $table->id();
             $table->float('size');
             $table->float('thickness');
             $table->string('shooting_method');
@@ -27,8 +27,7 @@ return new class extends Migration
             $table->integer('deverop_time');
             $table->integer('deverop_temp');
             $table->string('remarks');
-            $table->timestamps('created_at');
-            $table->timestamps('updated_at');
+            $table->timestamps();
         });
     }
 
