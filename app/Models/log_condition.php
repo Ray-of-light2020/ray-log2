@@ -8,6 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class log_condition extends Model
 {
     use HasFactory;
-
+    
     protected $table = "log_conditions";
 }

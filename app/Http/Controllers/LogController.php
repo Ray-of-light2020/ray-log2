@@ -16,6 +16,10 @@ class LogController extends Controller
     public function index()
     {
         //
+        $data = [
+            'records' => log_conditions::all()
+        ];
+        return view('search',$data);
     }
 
     /**
@@ -37,6 +41,7 @@ class LogController extends Controller
     public function store(Request $request)
     {
         //
+        return view('log_register');
     }
 
     /**

@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\LogController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,6 +24,6 @@ Route::get('/dashboard', function () {
 require __DIR__.'/auth.php';
 
 
-Route::resource('log', 'LogController', ['only' => [
+Route::resource('log', LogController::Class, ['only' => [
     'index', 'store','edit','destroy'
 ]]);
