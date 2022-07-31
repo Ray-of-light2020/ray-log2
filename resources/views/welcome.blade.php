@@ -8,6 +8,7 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
 
         <!-- Styles -->
         <style>
@@ -36,14 +37,14 @@
                 </div>
             @endif
 
-            <div class="pt-3">
+            <div class="pt-5">
                 <h1 class="text-center">ガンマー線 照射条件記録</h1>
             </div>
-            <div class="text-center">
+            <div class="text-center pt-3">
                 <a href="{{ url('/log') }}">照射条件検索</a>
             </div>
-            <div class="text-center">
-                <a href="{{ url('/log') }}">照射条件入力</a>
+            <div class="text-center pt-3">
+                <a href="{{ url('/log/create') }}">照射条件入力</a>
             </div>
         </div>
     </body>

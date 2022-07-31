@@ -25,5 +25,6 @@ require __DIR__.'/auth.php';
 
 
 Route::resource('log', LogController::Class, ['only' => [
-    'index', 'store','edit','destroy'
+    'index', 'create','store','edit','destroy','update','show'
 ]]);
+

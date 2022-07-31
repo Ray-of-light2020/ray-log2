@@ -17,7 +17,7 @@ class LogController extends Controller
     {
         //
         $data = [
-            'records' => log_conditions::all()
+            'records' => log_condition::all()
         ];
         return view('search',$data);
     }
@@ -30,6 +30,7 @@ class LogController extends Controller
     public function create()
     {
         //
+        return view('log_register');
     }
 
     /**
@@ -41,6 +42,8 @@ class LogController extends Controller
     public function store(Request $request)
     {
         //
+        $b = new log_condition();
+        $b->fill($request->except('_token'))->save();
         return view('log_register');
     }
 
@@ -53,6 +56,9 @@ class LogController extends Controller
     public function show($id)
     {
         //
+        return view('delete', [
+            'b' => log_condition::findOrFail($id)
+          ]);
     }
 
     /**
@@ -64,6 +70,9 @@ class LogController extends Controller
     public function edit($id)
     {
         //
+        return view('edit', [
+            'b' => log_condition::findOrFail($id)
+          ]);
     }
 
     /**
@@ -76,6 +85,14 @@ class LogController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $b = log_condition::find($id);
+        $b->fill($request->except('_token', '_method'))->save();
+        $data = [
+            'records' => log_condition::all(),
+   
+        ];
+  return view('search',$data);
+
     }
 
     /**
@@ -87,5 +104,12 @@ class LogController extends Controller
     public function destroy($id)
     {
         //
+        $b = log_condition::findOrFail($id);
+        $b->delete();
+        $data = [
+          'records' => log_condition::all(),
+          'id' => $id
+      ];
+        return view('search',$data);
     }
 }

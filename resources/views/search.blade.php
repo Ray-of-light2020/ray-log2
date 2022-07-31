@@ -5,6 +5,7 @@
 <div class="pl-2">
 <p>板厚で検索</p>
 <form action="/t-search" method="POST">
+@method('put')
 @csrf
     <p><input type="text" name="keyword" ></p>
     <p><input type="submit" value="検索"></p>
@@ -94,15 +95,12 @@
   <td></td>
 @foreach ($records as $record)
     <td>
-      <a href="/{{ $record->id }}/edit">編集</a>
-      <a href="/{{ $record->id }}">削除</a>
+      <a href="/log/{{ $record->id }}/edit">編集</a>
+      <a href="/log/{{ $record->id }}">削除</a>
     </td>
 @endforeach
   </tr>
 </table>
 <div class="text-center">
-@if($tsearch === 0)
-{{ $records->links() }}
-@endif
 </div>
 @endsection
