@@ -3,15 +3,31 @@
 @section('main')
 <h1>ガンマー線 照射条件記録</h1>
 <div class="pl-2">
-<p>板厚で検索</p>
-<form action="/t-search" method="POST">
-@method('put')
-@csrf
-    <p><input type="text" name="keyword" ></p>
-    <p><input type="submit" value="検索"></p>
-</form>
+  <p>板厚で検索</p>
+  <form action="/t-search" method="POST">
+  @csrf
+      <p><input type="text" name="keyword" ></p>
+      <p><input type="submit" value="検索"></p>
+  </form>
 </div>
-
+@switch($display)
+@case('t-search')
+<h2>照射条件検索結果</h2>
+<p>(板厚検索)</p>
+@break
+@case('edit')
+<h2>No.{{$id}}を編集しました。</h2>
+@break
+@case('delete')
+<h2>No.{{$id}}を削除しました。</h2>
+@break
+@case('store')
+<h2>条件を登録しました。</h2>
+@break
+@default
+<h2>照射条件全検索結果</h2>
+<p>(全{{$all}}件中{{$number}}件表示)</p>
+@endswitch
 <table class="table">
 <tr>
   <th>No.</th>
@@ -101,6 +117,9 @@
 @endforeach
   </tr>
 </table>
-<div class="text-center">
+
+<div class="text-center pt-3 pb-3">
+  {{ $records->links() }}
 </div>
+
 @endsection

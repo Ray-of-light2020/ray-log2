@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Models\log_condition;
 
+
+
 class LogController extends Controller
 {
     /**
@@ -13,11 +15,18 @@ class LogController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    // メンバ変数の設定
+    private $number = 3;
+
     public function index()
     {
         //
+       $num = $this->number;
         $data = [
-            'records' => log_condition::all()
+            'records' => log_condition::simplepaginate($num),
+            'display' => 'search',
+            'number' =>  $num,
+            'all' => log_condition::all()->count()
         ];
         return view('search',$data);
     }
@@ -42,9 +51,15 @@ class LogController extends Controller
     public function store(Request $request)
     {
         //
+        $this->validate($request, log_condition::$rules);
+        $num = $this->number;
         $b = new log_condition();
         $b->fill($request->except('_token'))->save();
-        return view('log_register');
+        $data = [
+            'display' => 'store',
+            'records' => log_condition::simplepaginate($num)
+        ];
+        return view('search',$data);
     }
 
     /**
@@ -85,13 +100,16 @@ class LogController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $num = $this->number;
         $b = log_condition::find($id);
         $b->fill($request->except('_token', '_method'))->save();
         $data = [
-            'records' => log_condition::all(),
-   
+            'records' => log_condition::simplepaginate($num),
+            'id' => $id,
+            'display' => 'edit',
+    
         ];
-  return view('search',$data);
+        return view('search',$data);
 
     }
 
@@ -104,12 +122,27 @@ class LogController extends Controller
     public function destroy($id)
     {
         //
+        $num = $this->number;
         $b = log_condition::findOrFail($id);
         $b->delete();
         $data = [
-          'records' => log_condition::all(),
-          'id' => $id
-      ];
+            'records' => log_condition::simplepaginate($num),
+            'id' => $id,
+            'display' => 'delete',
+        ];
         return view('search',$data);
     }
+    
+    public function t_search (Request $request)
+    {   
+        $num = $this->number;
+        $keyword = $request->input('keyword');
+        $data = [
+          'records' => log_condition::where('thickness','LIKE', "%{$keyword}%")->simplepaginate($num),
+          'display' => 't-search'
+      ];
+
+        return view('search',$data);
+    }
+
 }

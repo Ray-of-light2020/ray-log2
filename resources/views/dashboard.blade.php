@@ -14,4 +14,11 @@
             </div>
         </div>
     </div>
+    <div class="text-center pt-3">
+        <a href="{{ url('/log') }}">照射条件検索</a>
+    </div>
+    <div class="text-center pt-3">
+        <a href="{{ url('/log/create') }}">照射条件入力</a>
+    </div>
 </x-app-layout>
+

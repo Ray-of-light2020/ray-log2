@@ -11,7 +11,9 @@
 @section('main')
 
 @show
-<a href="{{ url('/') }}">Top</a>
+<div class="text-center">
+    <a href="{{ url('/') }}">Top</a>
+</div>
 <hr />
 </body>
 </html>

@@ -28,10 +28,10 @@
                     @auth
                         <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Dashboard</a>
                     @else
-                        <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a>
+                        <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">ログイン</a>
 
                         @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
+                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">ユーザー登録</a>
                         @endif
                     @endauth
                 </div>
@@ -45,6 +45,10 @@
             </div>
             <div class="text-center pt-3">
                 <a href="{{ url('/log/create') }}">照射条件入力</a>
+            </div>
+            <div class="text-center pt-3">
+                <p>条件の検索(閲覧)はユーザー登録は不要です</p>
+                <p>条件の入力・編集・削除は<a href="{{ route('register') }}" >ユーザー登録</a>をお願いします。</p>
             </div>
         </div>
     </body>

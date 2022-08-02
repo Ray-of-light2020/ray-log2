@@ -28,3 +28,4 @@ Route::resource('log', LogController::Class, ['only' => [
     'index', 'create','store','edit','destroy','update','show'
 ]]);
 
+Route::post('/t-search', 'App\Http\Controllers\LogController@t_search');
