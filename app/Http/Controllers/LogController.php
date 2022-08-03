@@ -15,7 +15,7 @@ class LogController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    // メンバ変数の設定
+    // メンバー変数の設定
     private $number = 3;
 
     public function index()
@@ -26,7 +26,7 @@ class LogController extends Controller
             'records' => log_condition::simplepaginate($num),
             'display' => 'search',
             'number' =>  $num,
-            'all' => log_condition::all()->count()
+            'all' => log_condition::count()
         ];
         return view('search',$data);
     }
