@@ -23,20 +23,6 @@
     </head>
     <body class="antialiased">
         <div class="min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
-            @if (Route::has('login'))
-                <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-                    @auth
-                        <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Dashboard</a>
-                    @else
-                        <a href="{{ url('/login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">ログイン</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ url('/register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">ユーザー登録</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
-
             <div class="pt-5">
                 <h1 class="text-center">ガンマー線 照射条件記録</h1>
             </div>
@@ -45,10 +31,6 @@
             </div>
             <div class="text-center pt-3">
                 <a href="{{ url('/log/create') }}">照射条件入力</a>
-            </div>
-            <div class="text-center pt-3">
-                <p>条件の検索(閲覧)はユーザー登録は不要です</p>
-                <p>条件の入力・編集・削除は<a href="{{ route('register') }}" >ユーザー登録</a>をお願いします。</p>
             </div>
         </div>
     </body>

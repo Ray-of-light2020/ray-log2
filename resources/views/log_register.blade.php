@@ -3,8 +3,6 @@
 @section('main')
 <h1>ガンマー線 照射条件記録</h1>
 <h2>照射条件入力</h2>
-@if (Route::has('login'))
-@auth
 <p>※は必須項目です。</p>
 @if (count($errors) > 0)
   <ul>
@@ -79,12 +77,6 @@
     <input type="submit" value="送信" />
   </div>
 </form>
-@else
-    <p>データの入力はログインして下さい。</p>
-@endauth
-                
-@endif
-
 @endsection
 
 

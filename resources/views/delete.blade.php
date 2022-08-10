@@ -1,8 +1,6 @@
 @extends('layouts.base')
 @section('title', 'ガンマ線条件記録')
-@section('main')
-@if (Route::has('login'))              
-    @auth
+@section('main')            
 <h2>以下の記録を削除</h2>
 <form method="POST" action="/log/{{ $b->id }}/">
   @csrf
@@ -65,11 +63,4 @@
         <input type="submit" value="削除" />
     </div>
 </form> 
-                    
- @else
-    <p>データの削除はログインして下さい。</p>
-@endauth
-                
-@endif
-
 @endsection
