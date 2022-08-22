@@ -38,7 +38,8 @@
             @endif
 
             <div class="pt-5">
-                <h1 class="text-center">ガンマー線 照射条件記録</h1>
+                <h1 class="text-center">非破壊検査 放射線透過試験</h1>
+                <h2 class="text-center">ガンマー線 照射条件記録</h1>
             </div>
             <div class="text-center pt-3">
                 <a href="{{ url('/log') }}">照射条件検索</a>
@@ -46,9 +47,13 @@
             <div class="text-center pt-3">
                 <a href="{{ url('/log/create') }}">照射条件入力</a>
             </div>
-            <div class="text-center pt-3">
+            <div class="text-center pt-5">
                 <p>条件の検索(閲覧)はユーザー登録は不要です</p>
                 <p>条件の入力・編集・削除は<a href="{{ route('register') }}" >ユーザー登録</a>をお願いします。</p>
+            </div>
+            <div class="text-center pt-5">
+                <p>運営者へお問合せ</p>
+                <p class="top-link">メール:<a class="link-color link-anime" href="mailto:a.ray.of.light2020@gmail.com">a.ray.of.light2020@gmail.com</a></p><p class="mail-explanation">(メールソフトが起動します。)</p>
             </div>
         </div>
     </body>
