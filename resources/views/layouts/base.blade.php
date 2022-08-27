@@ -15,5 +15,6 @@
     <a href="{{ url('/') }}">Top</a>
 </div>
 <hr />
+<script src="{{ asset('/js/script.js') }}"></script>
 </body>
 </html>
