@@ -92,7 +92,7 @@
 <tr>
    <th>現像時間</th>
     @foreach ($records as $record)
-   <td>{{ $record->deverop_time }}′</td>
+   <td class="develop-time">{{ $record->deverop_time }}′</td>
     @endforeach
 </tr>
 <tr>
