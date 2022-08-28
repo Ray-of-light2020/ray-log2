@@ -1,11 +1,10 @@
 'use strict';
 
-let ele = document.getElementsByClassName("develop-time").innerText;
+let ele = document.querySelectorAll(".develop-time");
 
-// let len = ele.length;
-
-// for (let i = 0; i < len; i++){
-//     ele.item(i).style.color="red";
-// }
-console.log(ele);
+ele.forEach(function(elem){
+    if(elem.textContent > 9){
+        elem.style.color="red";
+    };
+});
 
