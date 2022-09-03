@@ -36,15 +36,15 @@
     @endforeach
 </tr>
 <tr>
-  <th>管サイズ</th>
+  <th>管サイズ(㎜)</th>
     @foreach ($records as $record)
-    <td>{{ $record->size }} ㎜</td>
+    <td>{{ $record->size }}</td>
     @endforeach
 </tr>
 <tr>
-   <th>板厚</th>
+   <th>板厚(㎜)</th>
     @foreach ($records as $record)
-   <td>{{ $record->thickness }} ㎜</td>
+   <td>{{ $record->thickness }}</td>
     @endforeach
 </tr>
 <tr>
@@ -54,33 +54,33 @@
     @endforeach
 </tr>
 <tr>
-   <th>線源強さ</th>
+   <th>線源強さ(Ci)</th>
     @foreach ($records as $record)
-    <td>{{ $record->ci }} ci</td>
+    <td>{{ $record->ci }}</td>
     @endforeach
 </tr>
 <tr>
-   <th>SFD</th>
+   <th>SFD(㎜)</th>
     @foreach ($records as $record)
-   <td>{{ $record->sfd }}㎜</td>
+   <td>{{ $record->sfd }}</td>
     @endforeach
 </tr>
 <tr>
-   <th>照射時間</th>
+   <th>照射時間(分)</th>
     @foreach ($records as $record)
-   <td>{{ $record->irradiation_time }}′</td>
+   <td>{{ $record->irradiation_time }}</td>
     @endforeach
 </tr>
 <tr>
    <th>最高濃度</th>
     @foreach ($records as $record)
-  <td>D&nbsp;{{ $record->d_u }}</td>
+  <td>{{ $record->d_u }}</td>
     @endforeach
 </tr>
 <tr>
    <th>最底濃度</th>
     @foreach ($records as $record)
-   <td>D&nbsp;{{ $record->d_l }}</td>
+   <td>{{ $record->d_l }}</td>
     @endforeach
 </tr>
 <tr>
@@ -96,9 +96,9 @@
     @endforeach
 </tr>
 <tr>
-   <th>現像温度</th>
+   <th>現像温度(度)</th>
     @foreach ($records as $record)
-   <td>{{ $record->deverop_temp }}°</td>
+   <td>{{ $record->deverop_temp }}</td>
     @endforeach
 </tr>
 <tr>
@@ -121,5 +121,4 @@
 <div class="text-center pt-3 pb-3">
   {{ $records->links() }}
 </div>
-
 @endsection
