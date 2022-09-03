@@ -29,3 +29,5 @@ Route::resource('log', LogController::Class, ['only' => [
 ]]);
 
 Route::post('/t-search', 'App\Http\Controllers\LogController@t_search');
+
+Route::get('/conditions', 'App\Http\Controllers\LogController@conditions');

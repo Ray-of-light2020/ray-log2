@@ -144,5 +144,9 @@ class LogController extends Controller
 
         return view('search',$data);
     }
+    public function conditions ()
+    {   
+        return view('conditions');
+    }
 
 }

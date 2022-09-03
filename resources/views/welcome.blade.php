@@ -47,6 +47,9 @@
             <div class="text-center pt-3">
                 <a href="{{ url('/log/create') }}">照射条件入力</a>
             </div>
+            <div class="text-center pt-3">
+                <a href="{{ url('/conditions') }}">参考条件算出</a>
+            </div>
             <div class="text-center pt-5">
                 <p>条件の検索(閲覧)はユーザー登録は不要です</p>
                 <p>条件の入力・編集・削除は<a href="{{ route('register') }}" >ユーザー登録</a>をお願いします。</p>

@@ -8,3 +8,17 @@ ele.forEach(function(elem){
     };
 });
 
+
+const showMessage = () => {
+    let thickness = document.getElementById("thickness").value;
+   
+    let ci = document.getElementById("ci").value;
+    
+    let sfd = document.getElementById("sfd").value;
+
+
+     document.getElementById("condition").innerHTML = thickness;
+     document.getElementById("condition2").innerHTML = ci;
+     document.getElementById("condition3").innerHTML = sfd;
+ }
+
