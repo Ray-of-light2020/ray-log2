@@ -15,6 +15,8 @@ const showMessage = () => {
     let ci = document.getElementById("ci").value;
     
     let sfd = document.getElementById("sfd").value;
+    
+    let rev = document.getElementById("rev").value;
     let base = {8:100,
         10:110,
         12:125,
@@ -47,10 +49,10 @@ const showMessage = () => {
     };
     let b_condition =  base[thickness];
    
-    let sec_con= b_condition * ((sfd /100)**2)/ci;
+    let sec_con= b_condition * ((sfd /100)**2)/ci * rev;
 
-    document.getElementById("condition").innerHTML = sec_con;
-    let min_con = Math.round(sec_con/60*10)/10 ; 
+    let min_con = Math.round(sec_con/60*10)/10;
+
     document.getElementById("condition2").innerHTML = min_con;
 }
 
