@@ -53,7 +53,7 @@
                 <a href="{{ url('/conditions') }}">参考条件算出</a>
                 <p>(イリ子の心)</p>
             </div>
-            <div class="pt-5 px-3">
+            <div class="text-center pt-5 px-3">
                 <p>条件の検索(閲覧)はユーザー登録は不要です。どなたでも利用できますので日々の業務に活用くださいませ。</p>
                 <p>条件の入力・編集・削除は<a href="{{ route('register') }}" >ユーザー登録</a>をお願いします。</p>
             </div>
